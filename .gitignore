@@ -1,0 +1,6 @@
+# CACHE AND IDEA FILES
+tests/api_tests/.pytest_cache
+.idea
+
+# SENSETIVE DATA
+tests/api_tests/.env.api.personal
