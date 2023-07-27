@@ -1,6 +1,7 @@
 # CACHE AND IDEA FILES
-tests/api_tests/.pytest_cache
+tests/api/.pytest_cache
 .idea
+tests/web/.pytest_cache
 
 # SENSETIVE DATA
-tests/api_tests/.env.api.personal
+.env.personal_data.private
