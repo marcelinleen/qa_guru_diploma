@@ -1,0 +1,75 @@
+{
+    "type": "object",
+    "required": [
+        "results"
+    ],
+    "properties": {
+        "results": {
+            "type": "object",
+            "required": [
+                "opensearch:Query",
+                "opensearch:totalResults",
+                "opensearch:startIndex",
+                "opensearch:itemsPerPage",
+                "artistmatches",
+                "@attr"
+            ],
+            "properties": {
+                "opensearch:Query": {
+                    "type": "object",
+                    "required": [
+                        "#text",
+                        "role",
+                        "searchTerms",
+                        "startPage"
+                    ],
+                    "properties": {
+                        "#text": {
+                            "type": "string"
+                        },
+                        "role": {
+                            "type": "string"
+                        },
+                        "searchTerms": {
+                            "type": "string"
+                        },
+                        "startPage": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "opensearch:totalResults": {
+                    "type": "string"
+                },
+                "opensearch:startIndex": {
+                    "type": "string"
+                },
+                "opensearch:itemsPerPage": {
+                    "type": "string"
+                },
+                "artistmatches": {
+                    "type": "object",
+                    "required": [
+                        "artist"
+                    ],
+                    "properties": {
+                        "artist": {
+                            "type": "array"
+                        }
+                    }
+                },
+                "@attr": {
+                    "type": "object",
+                    "required": [
+                        "for"
+                    ],
+                    "properties": {
+                        "for": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

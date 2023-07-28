@@ -1,0 +1,65 @@
+{
+    "type": "object",
+    "required": [
+        "results"
+    ],
+    "properties": {
+        "results": {
+            "type": "object",
+            "required": [
+                "opensearch:Query",
+                "opensearch:totalResults",
+                "opensearch:startIndex",
+                "opensearch:itemsPerPage",
+                "trackmatches",
+                "@attr"
+            ],
+            "properties": {
+                "opensearch:Query": {
+                    "type": "object",
+                    "required": [
+                        "#text",
+                        "role",
+                        "startPage"
+                    ],
+                    "properties": {
+                        "#text": {
+                            "type": "string"
+                        },
+                        "role": {
+                            "type": "string"
+                        },
+                        "startPage": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "opensearch:totalResults": {
+                    "type": "string"
+                },
+                "opensearch:startIndex": {
+                    "type": "string"
+                },
+                "opensearch:itemsPerPage": {
+                    "type": "string"
+                },
+                "trackmatches": {
+                    "type": "object",
+                    "required": [
+                        "track"
+                    ],
+                    "properties": {
+                        "track": {
+                            "type": "array"
+                        }
+                    }
+                },
+                "@attr": {
+                    "type": "object",
+                    "required": [],
+                    "properties": {}
+                }
+            }
+        }
+    }
+}

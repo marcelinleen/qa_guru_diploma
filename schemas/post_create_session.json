@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "required": [
+        "session"
+    ],
+    "properties": {
+        "session": {
+            "type": "object",
+            "required": [
+                "name",
+                "key",
+                "subscriber"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "key": {
+                    "type": "string"
+                },
+                "subscriber": {
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}

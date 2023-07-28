@@ -12,6 +12,8 @@ pytest = "^7.4.0"
 requests = "^2.31.0"
 python-dotenv = "^1.0.0"
 selene = "2.0.0rc3"
+allure-pytest = "^2.13.2"
+jsonschema = "^4.18.4"
 
 
 [build-system]

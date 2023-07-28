@@ -1,0 +1,47 @@
+{
+    "type": "object",
+    "required": [
+        "lovedtracks"
+    ],
+    "properties": {
+        "lovedtracks": {
+            "type": "object",
+            "required": [
+                "track",
+                "@attr"
+            ],
+            "properties": {
+                "track": {
+                    "type": "array"
+                },
+                "@attr": {
+                    "type": "object",
+                    "required": [
+                        "user",
+                        "totalPages",
+                        "page",
+                        "perPage",
+                        "total"
+                    ],
+                    "properties": {
+                        "user": {
+                            "type": "string"
+                        },
+                        "totalPages": {
+                            "type": "string"
+                        },
+                        "page": {
+                            "type": "string"
+                        },
+                        "perPage": {
+                            "type": "string"
+                        },
+                        "total": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

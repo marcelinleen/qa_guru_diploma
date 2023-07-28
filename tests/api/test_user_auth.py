@@ -4,11 +4,14 @@ from dotenv import load_dotenv
 import requests
 from helper.get_sign import get_sign
 import allure
+from helper.load_json_schema import load_json_schema
+from jsonschema import validate
 
 
 def test_get_auth(set_api_env):
     # ARRANGE
     base_url = set_api_env
+    schema = load_json_schema('post_create_session.json')
 
     load_dotenv(get_personal_env_path())
     api_key = os.getenv('API_KEY')
@@ -37,3 +40,4 @@ def test_get_auth(set_api_env):
     with allure.step('Assert the result'):
         assert response.status_code == 200
         assert response.json()['session']['name'] == login
+        validate(instance=response.json(), schema=schema)
