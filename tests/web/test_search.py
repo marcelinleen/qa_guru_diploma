@@ -4,6 +4,7 @@ from pages.web_pages.search_results_page import SearchResultsPage
 from selene import have, be
 from helper.get_env_path import test_data_path
 from dotenv import load_dotenv
+import allure
 
 
 def test_search_artist(setup_browser):
@@ -15,14 +16,18 @@ def test_search_artist(setup_browser):
     artist = os.getenv('ARTIST')
 
     # ACT
-    page.open()
-    page.accept_cookie()
-    page.search(artist)
-    search_page.define_search_as_artist()
+    with allure.step('Open the main page, assert the cookie'):
+        page.open()
+        page.accept_cookie()
+    with allure.step('Make a search'):
+        page.search(artist)
+    with allure.step('Concrete search as artist search'):
+        search_page.define_search_as_artist()
 
     # ASSERT
-    page.search_title.should(have.text(artist))
-    browser.element('.artist-results').should(have.text(artist))
+    with allure.step('Assert the results of search'):
+        page.search_title.should(have.text(artist))
+        browser.element('.artist-results').should(have.text(artist))
 
 
 def test_search_album(setup_browser):
@@ -34,14 +39,18 @@ def test_search_album(setup_browser):
     album = os.getenv('ALBUM')
 
     # ACT
-    page.open()
-    page.accept_cookie()
-    page.search(album)
-    search_page.define_search_as_album()
+    with allure.step('Open the main page, assert the cookie'):
+        page.open()
+        page.accept_cookie()
+    with allure.step('Make a search'):
+        page.search(album)
+    with allure.step('Concrete search as album search'):
+        search_page.define_search_as_album()
 
     # ASSERT
-    page.search_title.should(have.text(album))
-    browser.element('.album-results').should(have.text(album))
+    with allure.step('Assert the results of search'):
+        page.search_title.should(have.text(album))
+        browser.element('.album-results').should(have.text(album))
 
 
 def test_search_track(setup_browser):
@@ -53,11 +62,15 @@ def test_search_track(setup_browser):
     track = os.getenv('TRACK')
 
     # ACT
-    page.open()
-    page.accept_cookie()
-    page.search(track)
-    search_page.define_search_as_track()
+    with allure.step('Open the main page, assert the cookie'):
+        page.open()
+        page.accept_cookie()
+    with allure.step('Make a search'):
+        page.search(track)
+    with allure.step('Concrete search as track search'):
+        search_page.define_search_as_track()
 
     # ASSERT
-    page.search_title.should(have.text(track))
-    browser.element(f'[title="{track}"]').should(be.visible)
+    with allure.step('Assert the results of search'):
+        page.search_title.should(have.text(track))
+        browser.element(f'[title="{track}"]').should(be.visible)

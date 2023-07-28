@@ -2,8 +2,8 @@ import os
 from helper.get_env_path import get_personal_env_path, test_data_path
 from dotenv import load_dotenv
 import requests
-from helper.get_sign import get_sign
-from helper.get_sk import get_sk
+from helper.get_api_sig import get_sign
+from helper.get_api_sk import get_sk
 from helper.load_json_schema import load_json_schema
 from jsonschema import validate
 import allure
