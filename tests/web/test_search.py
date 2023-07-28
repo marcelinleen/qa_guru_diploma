@@ -1,6 +1,6 @@
 import os
-from pages.home_page import HomePage
-from pages.search_results_page import SearchResultsPage
+from pages.web_pages.home_page import HomePage
+from pages.web_pages.search_results_page import SearchResultsPage
 from selene import have, be
 from helper.get_env_path import test_data_path
 from dotenv import load_dotenv

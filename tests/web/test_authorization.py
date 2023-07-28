@@ -1,6 +1,7 @@
 import os
-from pages.login_page import LoginPage
-from pages.home_page import HomePage
+import allure
+from pages.web_pages.login_page import LoginPage
+from pages.web_pages.home_page import HomePage
 from selene import have, be
 from dotenv import load_dotenv
 from helper.get_env_path import get_personal_env_path
@@ -17,15 +18,20 @@ def test_login(setup_browser):
     password = os.getenv('PASSWORD')
 
     # ACT
-    login_page.open()
-    home_page.accept_cookie()
-    login_page.fill_login(login)
-    login_page.fill_password(password)
-    login_page.submit()
+    with allure.step('Open the login page, assert the cookie'):
+        login_page.open()
+    # TODO maybe get rid of the cookie step
+        home_page.accept_cookie()
+    with allure.step('Fill the login and password'):
+        login_page.fill_login(login)
+        login_page.fill_password(password)
+    with allure.step('Submit the form'):
+        login_page.submit()
 
     # ASSERT
-    browser.element('.header-title-label-wrap').should(have.exact_text(login))
-    browser.element('.auth-link').should(be.visible)
+    with allure.step('Assert the login'):
+        browser.element('.header-title-label-wrap').should(have.exact_text(login))
+        browser.element('.auth-link').should(be.visible)
 
 
 def test_logout(setup_browser):
@@ -39,13 +45,19 @@ def test_logout(setup_browser):
     password = os.getenv('PASSWORD')
 
     # ACT
-    login_page.open()
-    home_page.accept_cookie()
-    login_page.fill_login(login)
-    login_page.fill_password(password)
-    login_page.submit()
-    home_page.open()
-    home_page.logout()
+    with allure.step('Open the login page, assert the cookie'):
+        login_page.open()
+    # TODO maybe get rid of the cookie step
+        home_page.accept_cookie()
+    with allure.step('Fill the login and password'):
+        login_page.fill_login(login)
+        login_page.fill_password(password)
+    with allure.step("Submit the form and open user's page"):
+        login_page.submit()
+        home_page.open()
+    with allure.step('Logout'):
+        home_page.logout()
 
     # ASSERT
-    browser.element('.site-auth--anon').should(be.visible)
+    with allure.step('Assert the logout'):
+        browser.element('.site-auth--anon').should(be.visible)
