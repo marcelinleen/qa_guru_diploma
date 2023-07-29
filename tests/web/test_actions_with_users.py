@@ -1,8 +1,8 @@
 from pages.web_pages.user_page import UserPage
 from pages.web_pages.following_page import FollowingPage
 from helper.get_env_path import test_data_path, get_personal_env_path
-from helper.get_web_log_in import get_web_log_in
-from helper.check_following_list import clean_following_list, add_following
+from helper.web_helpers.get_web_log_in import get_web_log_in
+from helper.api_helpers.check_following_list import clean_following_list, add_following
 from dotenv import load_dotenv
 from selene import have
 import os
