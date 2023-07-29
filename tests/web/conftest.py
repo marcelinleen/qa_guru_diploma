@@ -4,6 +4,7 @@ from selene.support.shared import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from helper.get_env_path import get_personal_env_path
+from helper.attach_helpers import add_html, add_screenshot, add_video, add_logs
 from dotenv import load_dotenv
 
 # TODO: fully change conftest
@@ -50,3 +51,9 @@ def setup_browser(request):
     browser.config.base_url = 'https://www.last.fm'
 
     yield browser
+
+    add_html(browser)
+    add_screenshot(browser)
+    add_logs(browser)
+    add_video(browser)
+    browser.quit()
