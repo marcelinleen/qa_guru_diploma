@@ -70,7 +70,7 @@ class MobileLoginPage:
         browser.element((AppiumBy.CLASS_NAME, 'android.widget.Button')).click()
 
     def confirm_connect(self):
-        browser.element((AppiumBy.CLASS_NAME, 'android.widget.Button')).wait_until(be.visible)
+        browser.element(AppiumBy.XPATH, "//*[contains(@text, 'YES, ALLOW ACCESS')]").wait_until(be.visible)
         browser.element((AppiumBy.CLASS_NAME, 'android.widget.Button')).click()
 
     def close_notification_approve_window(self):
