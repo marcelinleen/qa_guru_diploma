@@ -11,9 +11,12 @@ python = "^3.10"
 pytest = "^7.4.0"
 requests = "^2.31.0"
 python-dotenv = "^1.0.0"
-selene = "2.0.0rc3"
+selene = "2.0.0b5"
 allure-pytest = "^2.13.2"
 jsonschema = "^4.18.4"
+appium-python-client = "2.11.1"
+pydantic = "^2.1.1"
+pydantic-settings = "^2.0.2"
 
 
 [build-system]
