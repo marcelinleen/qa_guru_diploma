@@ -2,6 +2,7 @@
 Реализация набора автотестов (UI, Mobile, API) для сервиса <code>Last.FM</code>
 
 # Инструменты и технологии, используемые в проекте
+
 <p align="center">
 <a href="https://www.python.org/"><img src="files/images/python.svg" width="50" height="50"  alt="PYTHON"/></a>
 <a href="https://www.jetbrains.com/ru-ru/pycharm/"><img src="files/images/pycharm.svg" width="50" height="50"  alt="PYCHARM"/></a>
