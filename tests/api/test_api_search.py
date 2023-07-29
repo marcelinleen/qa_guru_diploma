@@ -2,7 +2,7 @@ import os
 import requests
 from dotenv import load_dotenv
 from helper.get_env_path import get_personal_env_path, test_data_path
-from helper.load_json_schema import load_json_schema
+from helper.api_helpers.load_json_schema import load_json_schema
 from jsonschema import validate
 import allure
 

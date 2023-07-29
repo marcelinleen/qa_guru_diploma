@@ -1,5 +1,5 @@
 import requests
-from helper.get_api_sig import get_sign
+from helper.api_helpers.get_api_sig import get_sign
 
 
 def get_sk(base_url, api_key, login, password, api_secret):

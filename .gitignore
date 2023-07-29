@@ -2,6 +2,13 @@
 tests/api/.pytest_cache
 .idea
 tests/web/.pytest_cache
+helper/__pycache__
+tests/api/__pycache__
+helper/mobile_helper/__pycache__
+pages/mobile_pages/__pycache__
+tests/mobile/__pycache__
 
 # SENSETIVE DATA
 .env.personal_data.private
+tests/mobile/.env.mobile.browserstack
+tests/mobile/.env.mobile.local

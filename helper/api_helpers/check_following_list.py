@@ -1,5 +1,5 @@
 from pages.web_pages.user_page import UserPage
-from helper.api_get_user_following import get_user_following_list
+from helper.api_helpers.api_get_user_following import get_user_following_list
 
 
 def clean_following_list(browser, username, another_username):

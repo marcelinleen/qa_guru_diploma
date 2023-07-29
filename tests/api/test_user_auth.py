@@ -2,9 +2,9 @@ import os
 from helper.get_env_path import get_personal_env_path
 from dotenv import load_dotenv
 import requests
-from helper.get_api_sig import get_sign
+from helper.api_helpers.get_api_sig import get_sign
 import allure
-from helper.load_json_schema import load_json_schema
+from helper.api_helpers.load_json_schema import load_json_schema
 from jsonschema import validate
 
 

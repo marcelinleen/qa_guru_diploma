@@ -28,10 +28,10 @@ def test_mobile_login(set_mobile_browser):
         login_page.submit_form()
 
     with allure.step('Access connect'):
-        browser.element((AppiumBy.CLASS_NAME, 'android.widget.Button')).click()
+        login_page.confirm_connect()
 
     with allure.step('Close notification approve window'):
-        browser.element((AppiumBy.ID, 'fm.last.android:id/btnClose')).click()
+        login_page.close_notification_approve_window()
 
     # ASSERT
     with allure.step('Assert the login'):
