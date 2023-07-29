@@ -16,3 +16,19 @@ def get_test_data_path():
 
 test_data_path = get_test_data_path()
 
+
+def get_app_path(file: str):
+
+    if file.startswith('./'):
+        file = file[2:]
+
+    main_path = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+    path_to_file = os.path.join(main_path, f'files/{file}')
+    return path_to_file
+
+
+def get_mobile_env_path(env):
+
+    main_path = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+    path_to_mobile_env = os.path.join(main_path, 'tests', 'mobile', f'.env.mobile.{env}')
+    return path_to_mobile_env
