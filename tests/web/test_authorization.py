@@ -1,5 +1,6 @@
 import os
 import allure
+import pytest
 from pages.web_pages.login_page import LoginPage
 from pages.web_pages.home_page import HomePage
 from selene import have, be
@@ -7,6 +8,7 @@ from dotenv import load_dotenv
 from helper.get_env_path import get_personal_env_path
 
 
+@pytest.mark.parametrize('setup_browser', [(1024, 640), (1920, 1080)], indirect=True)
 def test_login(setup_browser):
 
     # ARRANGE
@@ -34,6 +36,7 @@ def test_login(setup_browser):
         browser.element('.auth-link').should(be.visible)
 
 
+@pytest.mark.parametrize('setup_browser', [(1024, 640), (1920, 1080)], indirect=True)
 def test_logout(setup_browser):
 
     # ARRANGE

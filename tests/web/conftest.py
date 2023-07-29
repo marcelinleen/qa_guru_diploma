@@ -49,6 +49,8 @@ def setup_browser(request):
                                              options=options)
 
     browser.config.base_url = 'https://www.last.fm'
+    size = request.param
+    browser.driver.set_window_size(size[0], size[1])
 
     yield browser
 
@@ -56,4 +58,6 @@ def setup_browser(request):
     add_screenshot(browser)
     add_logs(browser)
     add_video(browser)
+
     browser.quit()
+

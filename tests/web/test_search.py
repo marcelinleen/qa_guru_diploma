@@ -1,4 +1,5 @@
 import os
+import pytest
 from pages.web_pages.home_page import HomePage
 from pages.web_pages.search_results_page import SearchResultsPage
 from selene import have, be
@@ -7,6 +8,7 @@ from dotenv import load_dotenv
 import allure
 
 
+@pytest.mark.parametrize('setup_browser', [(1024, 640), (1920, 1080)], indirect=True)
 def test_search_artist(setup_browser):
     # ARRANGE
     browser = setup_browser
@@ -30,6 +32,7 @@ def test_search_artist(setup_browser):
         browser.element('.artist-results').should(have.text(artist))
 
 
+@pytest.mark.parametrize('setup_browser', [(1024, 640), (1920, 1080)], indirect=True)
 def test_search_album(setup_browser):
     # ARRANGE
     browser = setup_browser
@@ -53,6 +56,7 @@ def test_search_album(setup_browser):
         browser.element('.album-results').should(have.text(album))
 
 
+@pytest.mark.parametrize('setup_browser', [(1024, 640), (1920, 1080)], indirect=True)
 def test_search_track(setup_browser):
     # ARRANGE
     browser = setup_browser

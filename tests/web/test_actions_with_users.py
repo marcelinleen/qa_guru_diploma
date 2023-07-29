@@ -7,8 +7,10 @@ from dotenv import load_dotenv
 from selene import have
 import os
 import allure
+import pytest
 
 
+@pytest.mark.parametrize('setup_browser', [(1024, 640), (1920, 1080)], indirect=True)
 def test_follow_user(setup_browser):
     # ARRANGE
     browser = setup_browser
@@ -37,6 +39,7 @@ def test_follow_user(setup_browser):
         browser.element('.user-list-item').should(have.text(user))
 
 
+@pytest.mark.parametrize('setup_browser', [(1024, 640), (1920, 1080)], indirect=True)
 def test_unfollow_user(setup_browser):
     # ARRANGE
     browser = setup_browser
