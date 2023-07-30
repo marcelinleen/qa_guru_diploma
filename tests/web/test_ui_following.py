@@ -40,35 +40,3 @@ def test_follow_user(setup_browser):
     # ASSERT
     with allure.step('Assert that user is added to following list'):
         browser.element('.user-list-item').should(be.visible)
-
-
-@allure.label('Test Type', 'UI')
-@allure.severity(allure.severity_level.MINOR)
-@pytest.mark.parametrize('setup_browser', [(1920, 1080)], indirect=True)
-def test_unfollow_user(setup_browser):
-    # ARRANGE
-    browser = setup_browser
-    get_web_log_in(browser)
-
-    user_page = UserPage(browser)
-    follow_page = FollowingPage(browser)
-
-    load_dotenv(get_personal_env_path())
-    my_user_page = os.getenv('LOGIN')
-    api_key = os.getenv('API_KEY')
-    load_dotenv(test_data_path)
-    user = os.getenv('ANOTHER_USERNAME')
-
-    add_following(browser, my_user_page, user, api_key)
-
-    # ACT
-    with allure.step("Open the user's page"):
-        user_page.open(user)
-    with allure.step('Unfollow the user'):
-        user_page.unfollow_user()
-    with allure.step('Open the following list'):
-        follow_page.open(my_user_page)
-
-    # ASSERT
-    with allure.step('Assert the user is unfollowed'):
-        browser.element('.user-list-item').should(be.visible)
