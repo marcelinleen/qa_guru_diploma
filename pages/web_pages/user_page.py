@@ -1,4 +1,4 @@
-
+from selene import be
 class UserPage:
 
     def __init__(self, browser):
@@ -9,6 +9,8 @@ class UserPage:
 
     def follow_user(self):
         self.browser.element('[data-analytics-action="FollowUser"]').click()
+        self.browser.element('[data-analytics-action="UnfollowUser"]').wait_until(be.visible)
 
     def unfollow_user(self):
         self.browser.element('[data-analytics-action="UnfollowUser"]').click()
+        self.browser.element('[data-analytics-action="FollowUser"]').wait_until(be.visible)
