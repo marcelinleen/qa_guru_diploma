@@ -1,14 +1,8 @@
-import os
 import json
 import requests
-from dotenv import load_dotenv
-from helper.get_env_path import get_personal_env_path
 
 
-def get_user_following_list(user):
-
-    load_dotenv(get_personal_env_path())
-    api_key = os.getenv('API_KEY')
+def get_user_following_list(user, api_key):
 
     response = requests.get('http://ws.audioscrobbler.com/2.0/', params={
         'method': 'user.getfriends',

@@ -23,10 +23,11 @@ def test_follow_user(setup_browser):
 
     load_dotenv(get_personal_env_path())
     my_user_page = os.getenv('LOGIN')
+    api_key = os.getenv('API_KEY')
     load_dotenv(test_data_path)
     user = os.getenv('ANOTHER_USERNAME')
 
-    clean_following_list(browser, my_user_page, user)
+    clean_following_list(browser, my_user_page, user, api_key)
 
     # ACT
     with allure.step('Open other user page'):
@@ -54,10 +55,11 @@ def test_unfollow_user(setup_browser):
 
     load_dotenv(get_personal_env_path())
     my_user_page = os.getenv('LOGIN')
+    api_key = os.getenv('API_KEY')
     load_dotenv(test_data_path)
     user = os.getenv('ANOTHER_USERNAME')
 
-    add_following(browser, my_user_page, user)
+    add_following(browser, my_user_page, user, api_key)
 
     # ACT
     with allure.step("Open the user's page"):
