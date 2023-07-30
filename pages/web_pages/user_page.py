@@ -13,3 +13,4 @@ class UserPage:
 
     def unfollow_user(self):
         self.browser.element('[data-analytics-action="UnfollowUser"]').click()
+        self.browser.element('[data-analytics-action="FollowUser"]').wait_until(be.visible)

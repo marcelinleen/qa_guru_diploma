@@ -63,19 +63,40 @@ pytest tests
 ```
 pytest tests
 ```
-При этом мобильные тесты могут быть запущены как в <code>BrowserStack</code>, так и локально. Для этого необходимо при запуске указать команду:
+
+## Локальный запуск мобильных тестов
+
+Мобильные тесты могут быть запущены как в <code>BrowserStack</code>, так и локально. 
+Для локального запуска необходимо указать команду:
 ```
 pytest --env=local tests/mobile/
 ```
+
+Тогда как для запуска в BrowserStack:
+```
+pytest --env=browserstack tests/mobile/
+```
+
 Пример такого параметризованного запуска можно увидеть на <a href="https://www.loom.com/share/a35e74b30d6a4edf976cac0692f16e62?sid=eb825c54-55ef-4223-8cda-25e3dbe1f011">видео</a>.
 По умолчанию запуск тестов происходит на <code>BrowserStack</code>.
 
 # Подготовка к удаленному запуску
 ### Удаленный запуск UI-тестов
+Для запуска UI-тестов, в разделе **Сборка**, необходимо добавить шаг по созданию/изменению .env-файл с данными тестовой учетной записи (**LOGIN**, **PASSWORD**), а также указать данные для авторизации на стороне Selenoid (**SELENOID_LOGIN**, **SELENOID_PASSWORD**).
+В проекте все чувствительные данные хранятся в файле <code>.env.personal_data</code> - его пример можно найти в проекте в файле <code>.env.personal_data.example</code>
+
+<img src="files/readme_images/env_setting.jpg" alt=".ENV FILE CREATE"/></a>
 
 ### Удаленный запуск API-тестов
+Для запуска API-тестов, в тот же файл <code>.env.personal_data</code> необходимо добавить данные тестовые учетной записи (**LOGIN**, **PASSWORD**), а также API-данные учетной записи (**API_KEY**, **API_SECRET**) - пример таких данных также можно найти в файле <code>.env.personal_data.example</code>.
+
+Актуальные для юзера данные можно найти на [странице API-подключений](https://www.last.fm/api/accounts) после авторизации на сервисе.
+<img src="files/readme_images/api_data.jpg" alt="API LAST.FM DATA"/></a>
+
+<img src="files/readme_images/env_setting.jpg" alt=".ENV FILE CREATE"/></a>
 
 ### Удаленный запуск мобильных тестов
+Для запуска мобильных тестов, необходимо создать .env-файл
 
 # Отчеты о запусках
 
