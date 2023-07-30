@@ -86,6 +86,10 @@ pytest --env=${ENV} tests/mobile
 # Локальный запуск
 Для локального запуска с значениями по умолчанию необходимо произвести команду:
 ```
+python -m venv .venv
+source .venv/bin/activate
+pip install poetry
+poetry install --no-root
 pytest tests
 ```
 
@@ -144,18 +148,21 @@ pytest --env=local tests/mobile/
 В отчете для каждого теста указана критичность, его функциональность (через тег <code>@allure.story</code>), а также приложены результаты прохождения: видео, html страницы, скриншот после прохождения, логи браузера.
 
 <img src="files/readme_images/allure_report_ui.jpg" alt="ALLURE REPORT FOR UI TESTS"/>
+<img src="files/readme_images/allure_report_ui_detailed.jpg" alt="DETAILED ALLURE REPORT FOR UI TESTS"/>
 
 ### Allure для API-тестов
 
 В отчете для каждого теста указана критичность, а также приложены метод запроса, тело запроса и ответа, статус ответа.
 
 <img src="files/readme_images/allure_report_api.jpg" alt="ALLURE REPORT FOR API TESTS"/>
+<img src="files/readme_images/allure_report_api_detailed.jpg" alt="DETAILED ALLURE REPORT FOR API TESTS"/>
 
 ### Allure для мобильных тестов
 
 В отчете для каждого теста указана критичность, его функциональность (через тег <code>@allure.story</code>), а также приложены результаты прохождения (видео в случае запуска через **BrowserStack**).
 
 <img src="files/readme_images/allure_report_mobile.jpg" alt="ALLURE REPORT FOR MOBILE TESTS"/>
+<img src="files/readme_images/allure_report_mobile_detailed.jpg" alt="DETAILED ALLURE REPORT FOR API TESTS"/>
 
 # Нотификация о завершении прогона в Telegram-бот
 
@@ -163,14 +170,14 @@ pytest --env=local tests/mobile/
 
 ### Примеры результатов прогонов
 
-### UI-тесты
+#### UI-тесты
 
 <img src="files/readme_images/telegram_results_ui.jpg" alt="TELEGRAM NOTIFICATION ABOUT UI TESTS"/>
 
-### API-тесты
+#### API-тесты
 
 <img src="files/readme_images/telegram_results_api.jpg" alt="TELEGRAM NOTIFICATION ABOUT API TESTS"/>
 
-### Мобильные тесты
+#### Мобильные тесты
 
 <img src="files/readme_images/telegram_results_mobile.jpg" alt="TELEGRAM NOTIFICATION ABOUT MOBILE TESTS"/>
