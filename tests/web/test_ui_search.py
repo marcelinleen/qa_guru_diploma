@@ -34,6 +34,7 @@ def test_search_artist(setup_browser):
         browser.element('.artist-results').should(have.text(artist))
 
 
+@allure.story('Search Page')
 @allure.label('Test Type', 'UI')
 @allure.severity(allure.severity_level.CRITICAL)
 @pytest.mark.parametrize('setup_browser', [(1024, 640), (1920, 1080)], indirect=True)
