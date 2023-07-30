@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 import allure
 
 
+@allure.story('Search')
 @allure.label('Test Type', 'UI')
 @allure.severity(allure.severity_level.CRITICAL)
 @pytest.mark.parametrize('setup_browser', [(1024, 640), (1920, 1080)], indirect=True)
@@ -20,13 +21,10 @@ def test_search_artist(setup_browser):
     artist = os.getenv('ARTIST')
 
     # ACT
-    with allure.step('Open the main page, assert the cookie'):
-        page.open()
-        page.accept_cookie()
-    with allure.step('Make a search'):
-        page.search(artist)
-    with allure.step('Concrete search as artist search'):
-        search_page.define_search_as_artist()
+    page.open()
+    page.accept_cookie()
+    page.search(artist)
+    search_page.define_search_as_artist()
 
     # ASSERT
     with allure.step('Assert the results of search'):
@@ -34,6 +32,7 @@ def test_search_artist(setup_browser):
         browser.element('.artist-results').should(have.text(artist))
 
 
+@allure.story('Search')
 @allure.label('Test Type', 'UI')
 @allure.severity(allure.severity_level.CRITICAL)
 @pytest.mark.parametrize('setup_browser', [(1024, 640), (1920, 1080)], indirect=True)
@@ -46,13 +45,10 @@ def test_search_album(setup_browser):
     album = os.getenv('ALBUM')
 
     # ACT
-    with allure.step('Open the main page, assert the cookie'):
-        page.open()
-        page.accept_cookie()
-    with allure.step('Make a search'):
-        page.search(album)
-    with allure.step('Concrete search as album search'):
-        search_page.define_search_as_album()
+    page.open()
+    page.accept_cookie()
+    page.search(album)
+    search_page.define_search_as_album()
 
     # ASSERT
     with allure.step('Assert the results of search'):
@@ -60,6 +56,7 @@ def test_search_album(setup_browser):
         browser.element('.album-results').should(have.text(album))
 
 
+@allure.story('Search')
 @allure.label('Test Type', 'UI')
 @allure.severity(allure.severity_level.CRITICAL)
 @pytest.mark.parametrize('setup_browser', [(1024, 640), (1920, 1080)], indirect=True)
@@ -72,13 +69,10 @@ def test_search_track(setup_browser):
     track = os.getenv('TRACK')
 
     # ACT
-    with allure.step('Open the main page, assert the cookie'):
-        page.open()
-        page.accept_cookie()
-    with allure.step('Make a search'):
-        page.search(track)
-    with allure.step('Concrete search as track search'):
-        search_page.define_search_as_track()
+    page.open()
+    page.accept_cookie()
+    page.search(track)
+    search_page.define_search_as_track()
 
     # ASSERT
     with allure.step('Assert the results of search'):

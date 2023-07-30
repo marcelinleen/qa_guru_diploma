@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 from helper.get_env_path import get_personal_env_path
 
 
+@allure.story('Login')
 @allure.label('Test Type', 'UI')
 @allure.severity(allure.severity_level.BLOCKER)
 @pytest.mark.parametrize('setup_browser', [(1024, 640), (1920, 1080)], indirect=True)
@@ -32,4 +33,3 @@ def test_login(setup_browser):
     with allure.step('Assert the login'):
         browser.element('.header-title-label-wrap').should(have.exact_text(login))
         browser.element('.auth-link').should(be.visible)
-

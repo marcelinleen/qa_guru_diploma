@@ -8,6 +8,7 @@ import allure
 import pytest
 
 
+@allure.story('Open favourite tracks')
 @allure.label('Test Type', 'UI')
 @allure.severity(allure.severity_level.NORMAL)
 @pytest.mark.parametrize('setup_browser', [(1920, 1080)], indirect=True)
@@ -21,11 +22,11 @@ def test_open_favourite_tracks(setup_browser):
     load_dotenv(get_personal_env_path())
     user = os.getenv('LOGIN')
 
-    with allure.step('Open other user page'):
-        user_page.open(user)
+    # ACT
 
-    with allure.step('Open favourites tracks'):
-        user_page.open_favourites()
+    user_page.open(user)
+
+    user_page.open_favourites()
 
     # ASSERT
     with allure.step('Check the tracks is displayed'):

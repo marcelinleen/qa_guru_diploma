@@ -1,3 +1,5 @@
+import allure
+
 
 class FollowingPage:
 
@@ -6,5 +8,5 @@ class FollowingPage:
         self.following_list = self.browser.element('[class=container][class=page-content]')
 
     def open(self, username):
-        self.browser.open(f'/user/{username}/following')
-
+        with allure.step('Check the list of following users'):
+            self.browser.open(f'/user/{username}/following')

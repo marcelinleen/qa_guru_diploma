@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 from helper.get_env_path import get_personal_env_path
 
 
+@allure.story('Logout')
 @allure.label('Test Type', 'UI')
 @allure.severity(allure.severity_level.NORMAL)
 @pytest.mark.parametrize('setup_browser', [(1920, 1080)], indirect=True)
@@ -22,17 +23,13 @@ def test_logout(setup_browser):
     password = os.getenv('PASSWORD')
 
     # ACT
-    with allure.step('Open the login page, assert the cookie'):
-        login_page.open()
-        home_page.accept_cookie()
-    with allure.step('Fill the login and password'):
-        login_page.fill_login(login)
-        login_page.fill_password(password)
-    with allure.step("Submit the form and open user's page"):
-        login_page.submit()
-        home_page.open()
-    with allure.step('Logout'):
-        home_page.logout()
+    login_page.open()
+    home_page.accept_cookie()
+    login_page.fill_login(login)
+    login_page.fill_password(password)
+    login_page.submit()
+    home_page.open()
+    home_page.logout()
 
     # ASSERT
     with allure.step('Assert the logout'):
