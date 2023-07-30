@@ -78,6 +78,6 @@ class MobileLoginPage:
         browser.element((AppiumBy.ID, 'fm.last.android:id/btnClose')).click()
 
     def accept_cookie(self):
-        if browser.element((AppiumBy, 'fm.last.android:id/btn_accept_cookies')).is_displayed():
-            browser.element((AppiumBy, 'fm.last.android:id/btn_accept_cookies')).click()
+        if browser.element((AppiumBy.ID, 'fm.last.android:id/btn_accept_cookies')).is_displayed():
+            browser.element((AppiumBy.ID, 'fm.last.android:id/btn_accept_cookies')).click()
 

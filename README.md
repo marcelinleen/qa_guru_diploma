@@ -10,6 +10,7 @@
 <a href="https://docs.pydantic.dev/latest/"><img src="files/readme_images/pydantic.svg" width="50" height="50"  alt="PYDANTIC"/></a>
 <a href="https://pypi.org/project/python-dotenv/"><img src="files/readme_images/dotenv.svg" width="50" height="50"  alt=".ENV"/></a>
 <a href="https://www.jenkins.io/"><img src="files/readme_images/jenkins.svg" width="50" height="50"  alt="JENKINS"/></a>
+<a href="https://python-poetry.org/"><img src="files/readme_images/poetry.svg" width="50" height="50"  alt="POETRY"/></a>
 <a href="https://www.last.fm/api"><img src="files/readme_images/lastdotfm.svg" width="50" height="50"  alt="LAST.FM"/></a>
 </p>
 
