@@ -9,7 +9,9 @@ from helper.mobile_helper.get_mobile_login import get_mobile_login
 from pages.mobile_pages.mobile_chart_page import ChartPage
 
 
-def test_mobile_logout(set_mobile_browser):
+@allure.label('Test Type', 'Mobile')
+@allure.severity(allure.severity_level.MINOR)
+def test_see_statistics(set_mobile_browser):
     # ARRANGE
     env = set_mobile_browser
     load_dotenv(get_personal_env_path())

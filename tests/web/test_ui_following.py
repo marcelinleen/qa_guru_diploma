@@ -10,6 +10,8 @@ import allure
 import pytest
 
 
+@allure.label('Test Type', 'UI')
+@allure.severity(allure.severity_level.MINOR)
 @pytest.mark.parametrize('setup_browser', [(1024, 640), (1920, 1080)], indirect=True)
 def test_follow_user(setup_browser):
     # ARRANGE
@@ -39,6 +41,8 @@ def test_follow_user(setup_browser):
         browser.element('.user-list-item').should(have.text(user))
 
 
+@allure.label('Test Type', 'UI')
+@allure.severity(allure.severity_level.MINOR)
 @pytest.mark.parametrize('setup_browser', [(1024, 640), (1920, 1080)], indirect=True)
 def test_unfollow_user(setup_browser):
     # ARRANGE

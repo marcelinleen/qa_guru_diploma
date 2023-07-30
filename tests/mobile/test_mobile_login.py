@@ -8,6 +8,8 @@ from pages.mobile_pages.mobile_login_page import MobileLoginPage
 from helper.get_env_path import get_personal_env_path
 
 
+@allure.label('Test Type', 'Mobile')
+@allure.severity(allure.severity_level.BLOCKER)
 def test_mobile_login(set_mobile_browser):
     # ARRANGE
     env = set_mobile_browser

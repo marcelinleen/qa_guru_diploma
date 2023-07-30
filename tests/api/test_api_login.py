@@ -8,7 +8,9 @@ from helper.api_helpers.load_json_schema import load_json_schema
 from jsonschema import validate
 
 
-def test_get_auth(set_api_env):
+@allure.label('Test Type', 'API')
+@allure.severity(allure.severity_level.BLOCKER)
+def test_api_login(set_api_env):
     # ARRANGE
     base_url = set_api_env
     schema = load_json_schema('post_create_session.json')

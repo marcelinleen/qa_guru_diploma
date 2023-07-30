@@ -7,6 +7,8 @@ from jsonschema import validate
 import allure
 
 
+@allure.label('Test Type', 'API')
+@allure.severity(allure.severity_level.CRITICAL)
 def test_successful_find_track(set_api_env):
     # ARRANGE
     base_url = set_api_env
@@ -32,6 +34,8 @@ def test_successful_find_track(set_api_env):
         validate(instance=response.json(), schema=schema)
 
 
+@allure.label('Test Type', 'API')
+@allure.severity(allure.severity_level.CRITICAL)
 def test_unsuccessful_find_track(set_api_env):
     # ARRANGE
     base_url = set_api_env
@@ -57,6 +61,8 @@ def test_unsuccessful_find_track(set_api_env):
         validate(instance=response.json(), schema=schema)
 
 
+@allure.label('Test Type', 'API')
+@allure.severity(allure.severity_level.CRITICAL)
 def test_successful_find_artist(set_api_env):
     # ARRANGE
     base_url = set_api_env

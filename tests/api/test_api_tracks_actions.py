@@ -9,6 +9,8 @@ from jsonschema import validate
 import allure
 
 
+@allure.label('Test Type', 'API')
+@allure.severity(allure.severity_level.CRITICAL)
 def test_like_track(set_api_env):
     # ARRANGE
     base_url = set_api_env
@@ -47,6 +49,8 @@ def test_like_track(set_api_env):
         assert '<lfm status="ok" />' in response.text
 
 
+@allure.label('Test Type', 'API')
+@allure.severity(allure.severity_level.CRITICAL)
 def test_get_favourite_tracks(set_api_env):
     # ARRANGE
     base_url = set_api_env

@@ -8,6 +8,8 @@ from dotenv import load_dotenv
 import allure
 
 
+@allure.label('Test Type', 'UI')
+@allure.severity(allure.severity_level.CRITICAL)
 @pytest.mark.parametrize('setup_browser', [(1024, 640), (1920, 1080)], indirect=True)
 def test_search_artist(setup_browser):
     # ARRANGE
@@ -32,6 +34,8 @@ def test_search_artist(setup_browser):
         browser.element('.artist-results').should(have.text(artist))
 
 
+@allure.label('Test Type', 'UI')
+@allure.severity(allure.severity_level.CRITICAL)
 @pytest.mark.parametrize('setup_browser', [(1024, 640), (1920, 1080)], indirect=True)
 def test_search_album(setup_browser):
     # ARRANGE
@@ -56,6 +60,8 @@ def test_search_album(setup_browser):
         browser.element('.album-results').should(have.text(album))
 
 
+@allure.label('Test Type', 'UI')
+@allure.severity(allure.severity_level.CRITICAL)
 @pytest.mark.parametrize('setup_browser', [(1024, 640), (1920, 1080)], indirect=True)
 def test_search_track(setup_browser):
     # ARRANGE

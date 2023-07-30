@@ -9,6 +9,8 @@ from helper.mobile_helper.get_mobile_login import get_mobile_login
 from pages.mobile_pages.mobile_user_menu import UserMenu
 
 
+@allure.label('Test Type', 'Mobile')
+@allure.severity(allure.severity_level.NORMAL)
 def test_mobile_logout(set_mobile_browser):
     # ARRANGE
     env = set_mobile_browser

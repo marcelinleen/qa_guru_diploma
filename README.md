@@ -45,19 +45,27 @@
  - получение истории чартов юзера за определенный период (30 дней);
  - выход из учетной записи
 
-# Jenkins job
+# <a href='https://jenkins.autotests.cloud/job/marcelinleen_diploma_project/'>Jenkins job</a>
 <img src="files/readme_images/jenkins_job.jpg" alt="JENKINS JOB"/></a>
 
 ## Удаленный запуск
 Удаленный запуск происходит по команде:
 ```
-smth
+python -m venv .venv
+source .venv/bin/activate
+pip install poetry
+poetry install --no-root
+pytest tests/api
+pytest --env=browserstack tests/mobile
+*UI ADD*
 ```
 
 # Локальный запуск
 Для локального запуска необходимо произвести команду:
 ```
-smth
+pytest tests/api
+pytest --env=browserstack tests/mobile
+*UI ADD*
 ```
 При этом мобильные тесты могут быть запущены как в <code>BrowserStack</code>, так и локально. Для этого необходимо при запуске указать команду:
 ```
