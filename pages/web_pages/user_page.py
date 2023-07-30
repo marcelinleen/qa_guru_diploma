@@ -1,4 +1,3 @@
-from selene import be
 class UserPage:
 
     def __init__(self, browser):

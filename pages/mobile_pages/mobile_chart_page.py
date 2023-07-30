@@ -1,7 +1,9 @@
 from appium.webdriver.common.appiumby import AppiumBy
 from selene.support.shared import browser
+import allure
 
 
+@allure.story('Chart Page')
 class ChartPage:
 
     def open(self):

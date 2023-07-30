@@ -45,21 +45,47 @@
  - получение истории чартов юзера за определенный период (30 дней);
  - выход из учетной записи
 
-# <a href='https://jenkins.autotests.cloud/job/marcelinleen_diploma_project/'>Jenkins job</a>
-<img src="files/readme_images/jenkins_job.jpg" alt="JENKINS JOB"/></a>
+## <a href='https://jenkins.autotests.cloud/job/marcelinleen_UI_diploma_project/'>Jenkins job для UI-тестов</a>
+<img src="files/readme_images/jenkins_job_ui.jpg" alt="JENKINS JOB FOR UI"/></a>
+
+## <a href='https://jenkins.autotests.cloud/job/marcelinleen_API_diploma_project/'>Jenkins job для API-тестов</a>
+<img src="files/readme_images/jenkins_job_api.jpg" alt="JENKINS JOB FOR API"/></a>
+
+## <a href='https://jenkins.autotests.cloud/job/marcelinleen_mobile_diploma_project/'>Jenkins job для мобильных тестов</a>
+<img src="files/readme_images/jenkins_job_mobile.jpg" alt="JENKINS JOB FOR MOBILE"/></a>
 
 ## Удаленный запуск
 Удаленный запуск происходит по команде:
+
+### UI-тесты:
 ```
 python -m venv .venv
 source .venv/bin/activate
 pip install poetry
 poetry install --no-root
-pytest tests
+pytest --browser=${BROWSER} --browser_version=${BROWSER_VERSION} tests/web
+```
+
+### API-тесты:
+```
+python -m venv .venv
+source .venv/bin/activate
+pip install poetry
+poetry install --no-root
+pytest tests/api
+```
+
+### Мобильные тесты:
+```
+python -m venv .venv
+source .venv/bin/activate
+pip install poetry
+poetry install --no-root
+pytest --env=${ENV} tests/mobile
 ```
 
 # Локальный запуск
-Для локального запуска необходимо произвести команду:
+Для локального запуска с значениями по умолчанию необходимо произвести команду:
 ```
 pytest tests
 ```
@@ -101,7 +127,11 @@ pytest --env=local tests/mobile/
 <img src="files/readme_images/env_setting.jpg" alt=".ENV FILE CREATE"/></a>
 
 ### Удаленный запуск мобильных тестов
-Для запуска мобильных тестов, в разделе **Сборка**, необходимо добавить шаг по созданию/изменению .env-файл в директории <code>tests/mobile</code> с указанием следующих настроек:
+Для запуска мобильных тестов, в разделе **Сборка**, необходимо добавить шаг по созданию/изменению .env-файл с данными тестовой учетной записи (**LOGIN**, **PASSWORD**).
+
+<img src="files/readme_images/env_setting.jpg" alt=".ENV FILE CREATE"/></a>
+
+Также необходимо добавить шаг по созданию/изменению .env-файл в директории <code>tests/mobile</code> с указанием следующих настроек, необходимых для подключению к **BrowserStack**:
 
 <img src="files/readme_images/mobile_env.jpg" alt="MOBILE .ENV FILE CREATE"/></a>
 
@@ -109,7 +139,14 @@ pytest --env=local tests/mobile/
 
 # Отчеты о запусках
 
-### Allure
-<img src="files/readme_images/allure_repost.jpg" alt="ALLURE REPORT"/></a>
+### Allure для UI-тестов
 
-### Allure TestOps
+<img src="files/readme_images/allure_report_ui.jpg" alt="ALLURE REPORT FOR UI TESTS"/></a>
+
+### Allure для API-тестов
+
+<img src="files/readme_images/allure_report_api.jpg" alt="ALLURE REPORT FOR API TESTS"/></a>
+
+### Allure для мобильных тестов
+
+<img src="files/readme_images/allure_report_mobile.jpg" alt="ALLURE REPORT FOR MOBILE TESTS"/></a>
