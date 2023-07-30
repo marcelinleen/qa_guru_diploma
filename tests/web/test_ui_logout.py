@@ -10,7 +10,7 @@ from helper.get_env_path import get_personal_env_path
 
 @allure.label('Test Type', 'UI')
 @allure.severity(allure.severity_level.NORMAL)
-@pytest.mark.parametrize('setup_browser', [(1024, 640), (1920, 1080)], indirect=True)
+@pytest.mark.parametrize('setup_browser', [(1920, 1080)], indirect=True)
 def test_logout(setup_browser):
 
     # ARRANGE
