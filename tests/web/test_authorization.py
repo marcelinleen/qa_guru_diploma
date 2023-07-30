@@ -22,7 +22,6 @@ def test_login(setup_browser):
     # ACT
     with allure.step('Open the login page, assert the cookie'):
         login_page.open()
-    # TODO maybe get rid of the cookie step
         home_page.accept_cookie()
     with allure.step('Fill the login and password'):
         login_page.fill_login(login)
@@ -50,7 +49,6 @@ def test_logout(setup_browser):
     # ACT
     with allure.step('Open the login page, assert the cookie'):
         login_page.open()
-    # TODO maybe get rid of the cookie step
         home_page.accept_cookie()
     with allure.step('Fill the login and password'):
         login_page.fill_login(login)
