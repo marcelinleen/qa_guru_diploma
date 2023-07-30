@@ -3,14 +3,14 @@
 
 # Инструменты и технологии, используемые в проекте
 <p align="center">
-<a href="https://www.python.org/"><img src="files/images/python.svg" width="50" height="50"  alt="PYTHON"/></a>
-<a href="https://www.selenium.dev/"><img src="files/images/selenium.svg" width="50" height="50"  alt="SELENIUM"/></a>
-<a href="https://docs.pytest.org/en/"><img src="files/images/pytest.svg" width="50" height="50"  alt="SELENIUM"/></a>
-<a href="https://www.jetbrains.com/ru-ru/pycharm/"><img src="files/images/pycharm.svg" width="50" height="50"  alt="PYCHARM"/></a>
-<a href="https://docs.pydantic.dev/latest/"><img src="files/images/pydantic.svg" width="50" height="50"  alt="PYDANTIC"/></a>
-<a href="https://pypi.org/project/python-dotenv/"><img src="files/images/dotenv.svg" width="50" height="50"  alt=".ENV"/></a>
-<a href="https://www.jenkins.io/"><img src="files/images/jenkins.svg" width="50" height="50"  alt="JENKINS"/></a>
-<a href="https://www.last.fm/api"><img src="files/images/lastdotfm.svg" width="50" height="50"  alt="LAST.FM"/></a>
+<a href="https://www.python.org/"><img src="files/readme_images/python.svg" width="50" height="50"  alt="PYTHON"/></a>
+<a href="https://www.selenium.dev/"><img src="files/readme_images/selenium.svg" width="50" height="50"  alt="SELENIUM"/></a>
+<a href="https://docs.pytest.org/en/"><img src="files/readme_images/pytest.svg" width="50" height="50"  alt="SELENIUM"/></a>
+<a href="https://www.jetbrains.com/ru-ru/pycharm/"><img src="files/readme_images/pycharm.svg" width="50" height="50"  alt="PYCHARM"/></a>
+<a href="https://docs.pydantic.dev/latest/"><img src="files/readme_images/pydantic.svg" width="50" height="50"  alt="PYDANTIC"/></a>
+<a href="https://pypi.org/project/python-dotenv/"><img src="files/readme_images/dotenv.svg" width="50" height="50"  alt=".ENV"/></a>
+<a href="https://www.jenkins.io/"><img src="files/readme_images/jenkins.svg" width="50" height="50"  alt="JENKINS"/></a>
+<a href="https://www.last.fm/api"><img src="files/readme_images/lastdotfm.svg" width="50" height="50"  alt="LAST.FM"/></a>
 </p>
 
 Весь проект выполнен на языке <code>Python</code>, а также дополнительно:
@@ -45,7 +45,7 @@
  - выход из учетной записи
 
 # Jenkins job
-*добавить скрин*
+<img src="files/readme_images/jenkins_job.jpg" alt="JENKINS JOB"/></a>
 
 ## Удаленный запуск
 Удаленный запуск происходит по команде:

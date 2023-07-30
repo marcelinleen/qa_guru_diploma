@@ -1,5 +1,3 @@
-from appium.webdriver.common.appiumby import AppiumBy
-from selene.support.shared import browser
 from pages.mobile_pages.mobile_login_page import MobileLoginPage
 
 
@@ -12,4 +10,4 @@ def get_mobile_login(env, login, password):
     login_page.submit_form()
     login_page.confirm_connect()
     login_page.close_notification_approve_window()
-
+    login_page.accept_cookie()

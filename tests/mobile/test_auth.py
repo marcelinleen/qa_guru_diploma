@@ -33,6 +33,9 @@ def test_mobile_login(set_mobile_browser):
     with allure.step('Close notification approve window'):
         login_page.close_notification_approve_window()
 
+    with allure.step('Accept cookie (if necessary)'):
+        login_page.accept_cookie()
+
     # ASSERT
     with allure.step('Assert the login'):
         browser.element((AppiumBy.ID, 'fm.last.android:id/ivAvatar')).should(be.visible)

@@ -76,3 +76,8 @@ class MobileLoginPage:
     def close_notification_approve_window(self):
         browser.element((AppiumBy.ID, 'fm.last.android:id/btnClose')).wait_until(be.visible)
         browser.element((AppiumBy.ID, 'fm.last.android:id/btnClose')).click()
+
+    def accept_cookie(self):
+        if browser.element((AppiumBy, 'fm.last.android:id/btn_accept_cookies')).is_displayed():
+            browser.element((AppiumBy, 'fm.last.android:id/btn_accept_cookies')).click()
+
