@@ -77,8 +77,7 @@ def test_search_track(setup_browser):
         page.accept_cookie()
     with allure.step('Make a search'):
         page.search(track)
-    with allure.step('Concrete search as track search'):
-        search_page.define_search_as_track()
+    search_page.define_search_as_track()
 
     # ASSERT
     with allure.step('Assert the results of search'):

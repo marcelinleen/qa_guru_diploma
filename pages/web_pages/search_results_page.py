@@ -13,5 +13,6 @@ class SearchResultsPage:
     def define_search_as_album(self):
         self.browser.element('.secondary-nav-item--albums').click()
 
-    def define_search_as_track(self):
-        self.browser.element('.secondary-nav-item--tracks').click()
+    with allure.step('Concrete search as track search'):
+        def define_search_as_track(self):
+            self.browser.element('.secondary-nav-item--tracks').click()
