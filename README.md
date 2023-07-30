@@ -55,17 +55,13 @@ python -m venv .venv
 source .venv/bin/activate
 pip install poetry
 poetry install --no-root
-pytest tests/api
-pytest --env=browserstack tests/mobile
-*UI ADD*
+pytest tests
 ```
 
 # Локальный запуск
 Для локального запуска необходимо произвести команду:
 ```
-pytest tests/api
-pytest --env=browserstack tests/mobile
-*UI ADD*
+pytest tests
 ```
 При этом мобильные тесты могут быть запущены как в <code>BrowserStack</code>, так и локально. Для этого необходимо при запуске указать команду:
 ```
