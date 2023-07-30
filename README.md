@@ -110,5 +110,6 @@ pytest --env=local tests/mobile/
 # Отчеты о запусках
 
 ### Allure
+<img src="files/readme_images/allure_repost.jpg" alt="ALLURE REPORT"/></a>
 
 ### Allure TestOps

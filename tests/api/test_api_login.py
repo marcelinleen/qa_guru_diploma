@@ -1,3 +1,4 @@
+import logging
 import os
 from helper.get_env_path import get_personal_env_path
 from dotenv import load_dotenv
@@ -37,6 +38,9 @@ def test_api_login(set_api_env):
                                                    'format': 'json'
                                                    }
                                  )
+
+    logging.info(response.status_code)
+    logging.info(response.json())
 
     # ASSERT
     with allure.step('Assert the result'):
