@@ -76,3 +76,9 @@ pytest --env=local tests/mobile/
 ### Удаленный запуск API-тестов
 
 ### Удаленный запуск мобильных тестов
+
+# Отчеты о запусках
+
+### Allure
+
+### Allure TestOps
