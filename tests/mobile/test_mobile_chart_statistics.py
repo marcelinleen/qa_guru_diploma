@@ -9,6 +9,7 @@ from helper.mobile_helper.get_mobile_login import get_mobile_login
 from pages.mobile_pages.mobile_chart_page import ChartPage
 
 
+@allure.story('Chart Page')
 @allure.label('Test Type', 'Mobile')
 @allure.severity(allure.severity_level.MINOR)
 def test_see_statistics(set_mobile_browser):
@@ -21,12 +22,9 @@ def test_see_statistics(set_mobile_browser):
     chart_page = ChartPage()
 
     # ACT
-    with allure.step('Open chart page'):
-        chart_page.open()
-
-    with allure.step('Set last 30 days filter'):
-        chart_page.open_period_filter()
-        chart_page.set_last_30_days()
+    chart_page.open()
+    chart_page.open_period_filter()
+    chart_page.set_last_30_days()
 
     # ASSERT
     with allure.step('Assert the filtered results'):

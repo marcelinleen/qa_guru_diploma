@@ -8,6 +8,7 @@ from pages.mobile_pages.mobile_login_page import MobileLoginPage
 from helper.get_env_path import get_personal_env_path
 
 
+@allure.story('Login')
 @allure.label('Test Type', 'Mobile')
 @allure.severity(allure.severity_level.BLOCKER)
 def test_mobile_login(set_mobile_browser):
@@ -19,24 +20,13 @@ def test_mobile_login(set_mobile_browser):
     login_page = MobileLoginPage()
 
     # ACT
-    with allure.step('Open the login page'):
-        login_page.open()
-
-    with allure.step('Fill the login and password'):
-        login_page.fill_login(env, login)
-        login_page.fill_password(env, password)
-
-    with allure.step('Submit the form'):
-        login_page.submit_form()
-
-    with allure.step('Access connect'):
-        login_page.confirm_connect()
-
-    with allure.step('Close notification approve window'):
-        login_page.close_notification_approve_window()
-
-    with allure.step('Accept cookie (if necessary)'):
-        login_page.accept_cookie()
+    login_page.open()
+    login_page.fill_login(env, login)
+    login_page.fill_password(env, password)
+    login_page.submit_form()
+    login_page.confirm_connect()
+    login_page.close_notification_approve_window()
+    login_page.accept_cookie()
 
     # ASSERT
     with allure.step('Assert the login'):

@@ -3,14 +3,16 @@ from selene.support.shared import browser
 import allure
 
 
-@allure.story('Chart Page')
 class ChartPage:
 
     def open(self):
-        browser.element((AppiumBy.ID, 'fm.last.android:id/charts_graph')).click()
+        with allure.step('Open chart page'):
+            browser.element((AppiumBy.ID, 'fm.last.android:id/charts_graph')).click()
 
     def open_period_filter(self):
-        browser.element((AppiumBy.ID, 'fm.last.android:id/ivPeriodButton')).click()
+        with allure.step('Open period filter'):
+            browser.element((AppiumBy.ID, 'fm.last.android:id/ivPeriodButton')).click()
 
     def set_last_30_days(self):
-        browser.element((AppiumBy.XPATH, "//*[contains(@text, 'Last 30 days')]")).click()
+        with allure.step('Set last 30 days filter'):
+            browser.element((AppiumBy.XPATH, "//*[contains(@text, 'Last 30 days')]")).click()

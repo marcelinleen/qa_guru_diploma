@@ -9,6 +9,7 @@ from helper.mobile_helper.get_mobile_login import get_mobile_login
 from pages.mobile_pages.mobile_user_menu import UserMenu
 
 
+@allure.story('Logout')
 @allure.label('Test Type', 'Mobile')
 @allure.severity(allure.severity_level.NORMAL)
 def test_mobile_logout(set_mobile_browser):
@@ -21,11 +22,8 @@ def test_mobile_logout(set_mobile_browser):
     user_menu = UserMenu()
 
     # ACT
-    with allure.step('Open the side menu'):
-        user_menu.open()
-
-    with allure.step('Click on Logout point'):
-        user_menu.logout()
+    user_menu.open()
+    user_menu.logout()
 
     # ASSERT
     with allure.step('Assert the logout'):
