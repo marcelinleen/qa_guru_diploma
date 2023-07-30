@@ -35,7 +35,7 @@ def test_like_track():
 
     api_sign = get_sign(data, api_secret)
 
-    # ARRANGE
+    # ACT
     with allure.step('Make a request'):
         response = project_url.post('', params={'method': 'track.love', 'track': track, 'artist': artist,
                                                 'api_key': api_key, 'api_sig': api_sign, 'sk': sk

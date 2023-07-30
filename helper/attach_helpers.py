@@ -1,5 +1,4 @@
 import allure
-import json
 from allure_commons.types import AttachmentType
 
 
@@ -31,10 +30,3 @@ def add_video(browser):
             + "' type='video/mp4'></video></body></html>")
     allure.attach(body=html, name='video_' + browser.driver.session_id, attachment_type=AttachmentType.HTML,
                   extension='.html')
-
-
-def attach_body():
-    with allure.step(f'{method} {url}'):
-        allure.attach(body=f'Status code: {response.status_code}, CURL: {curl}', name='request',
-                      attachment_type=AttachmentType.TEXT, extension='txt')
-        allure.attach(body=json.dumps(response_type), name='Response Body', attachment_type=AttachmentType.JSON)

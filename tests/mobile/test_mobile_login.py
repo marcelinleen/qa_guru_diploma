@@ -31,5 +31,3 @@ def test_mobile_login(set_mobile_browser):
     # ASSERT
     with allure.step('Assert the login'):
         browser.element((AppiumBy.ID, 'fm.last.android:id/ivAvatar')).should(be.visible)
-
-

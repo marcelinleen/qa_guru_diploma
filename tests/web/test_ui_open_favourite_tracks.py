@@ -23,9 +23,7 @@ def test_open_favourite_tracks(setup_browser):
     user = os.getenv('LOGIN')
 
     # ACT
-
     user_page.open(user)
-
     user_page.open_favourites()
 
     # ASSERT

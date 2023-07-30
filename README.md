@@ -26,21 +26,20 @@
 
 # Покрытый функционал
 
-## UI-тесты
-
+## <a href='https://github.com/marcelinleen/qa_guru_diploma/tree/main/tests/web'>UI-тесты</a>
  - авторизация пользователя;
  - поиск исполнителя, альбома и трека;
  - подписка на другого юзера (добавление в друзья);
  - просмотр понравившихся треков;
  - выход из учетной записи
 
-## API-тесты
+## <a href='https://github.com/marcelinleen/qa_guru_diploma/tree/main/tests/api'>API-тесты</a>
  - авторизация пользователя;
  - поиск исполнителя, альбома и трека (успешный и неуспешный);
  - добавить трек в **Понравившиеся**;
  - получить список треков из **Понравившихся**
 
-## Мобильные тесты
+## <a href='https://github.com/marcelinleen/qa_guru_diploma/tree/main/tests/mobile'>Мобильные тесты</a>
  - авторизация пользователя;
  - получение истории чартов юзера за определенный период (30 дней);
  - выход из учетной записи
@@ -106,7 +105,7 @@ pytest --env=local tests/mobile/
 При этом, для запуска мобильных тестов локально, необходимо убедиться, что:
  - <code>Appium Server</code> запущен;
  - эмулятор и/или реальный девайс подключен;
- - созданы настройки для запуска в _.env-файл_, расположенные в директории <code>tests/mobile</code>. Пример настроек можно найти в файле <code>.env.mobile.local.example</code>
+ - созданы настройки для запуска в _.env-файл_, расположенные в директории <code>tests/mobile</code>. Пример настроек можно найти в файле <a href='https://github.com/marcelinleen/qa_guru_diploma/blob/main/tests/mobile/.env.mobile.local.example'>.env.mobile.local.example</a>
 
 Пример такого параметризованного запуска можно увидеть на <a href="https://www.loom.com/share/a35e74b30d6a4edf976cac0692f16e62?sid=eb825c54-55ef-4223-8cda-25e3dbe1f011">видео</a>.
 По умолчанию запуск тестов происходит на <code>BrowserStack</code>.
@@ -114,12 +113,12 @@ pytest --env=local tests/mobile/
 # Подготовка к удаленному запуску
 ### Удаленный запуск UI-тестов
 Для запуска UI-тестов, в разделе **Сборка**, необходимо добавить шаг по созданию/изменению .env-файл с данными тестовой учетной записи (**LOGIN**, **PASSWORD**), а также указать данные для авторизации на стороне Selenoid (**SELENOID_LOGIN**, **SELENOID_PASSWORD**).
-В проекте все чувствительные данные хранятся в файле <code>.env.personal_data</code> - его пример можно найти в проекте в файле <code>.env.personal_data.example</code>
+В проекте все чувствительные данные хранятся в файле <code>.env.personal_data</code> - его пример можно найти в проекте в файле <a href='https://github.com/marcelinleen/qa_guru_diploma/blob/main/.env.personal_data.example'>.env.personal_data.example</a>
 
 <img src="files/readme_images/env_setting.jpg" alt=".ENV FILE CREATE"/></a>
 
 ### Удаленный запуск API-тестов
-Для запуска API-тестов, в тот же файл <code>.env.personal_data</code> необходимо добавить данные тестовые учетной записи (**LOGIN**, **PASSWORD**), а также API-данные учетной записи (**API_KEY**, **API_SECRET**) - пример таких данных также можно найти в файле <code>.env.personal_data.example</code>.
+Для запуска API-тестов, в тот же файл <code>.env.personal_data</code> необходимо добавить данные тестовые учетной записи (**LOGIN**, **PASSWORD**), а также API-данные учетной записи (**API_KEY**, **API_SECRET**) - пример таких данных также можно найти в файле <a href='https://github.com/marcelinleen/qa_guru_diploma/blob/main/.env.personal_data.example'>.env.personal_data.example</a>.
 
 Актуальные для юзера данные можно найти на [странице API-подключений](https://www.last.fm/api/accounts) после авторизации на сервисе.
 <img src="files/readme_images/api_data.jpg" alt="API LAST.FM DATA"/></a>
@@ -135,7 +134,7 @@ pytest --env=local tests/mobile/
 
 <img src="files/readme_images/mobile_env.jpg" alt="MOBILE .ENV FILE CREATE"/></a>
 
-Пример данного файла есть в проекте - <code>.env.browserstack.example</code>.
+Пример данного файла есть в проекте - <a href='https://github.com/marcelinleen/qa_guru_diploma/blob/main/tests/mobile/.env.mobile.browserstack.example'>.env.mobile.browserstack.example</a>.
 
 # Отчеты о запусках
 
