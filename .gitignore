@@ -11,6 +11,9 @@ pages/mobile_pages/__pycache__
 tests/mobile/__pycache__
 helper/api_helpers/__pycache__
 .venv
+helper/web_helpers/__pycache__
+pages/web_pages/__pycache__
+tests/web/__pycache__
 
 # SENSETIVE DATA
 .env.personal_data.private
