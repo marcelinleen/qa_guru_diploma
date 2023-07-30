@@ -9,11 +9,9 @@ class UserPage:
 
     def follow_user(self):
         self.browser.element('[data-analytics-action="FollowUser"]').click()
-        self.browser.element('[data-analytics-action="UnfollowUser"]').wait_until(be.visible)
 
     def unfollow_user(self):
         self.browser.element('[data-analytics-action="UnfollowUser"]').click()
-        self.browser.element('[data-analytics-action="FollowUser"]').wait_until(be.visible)
 
     def open_favourites(self):
         self.browser.element('.secondary-nav-item--loved').click()
