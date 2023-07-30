@@ -22,14 +22,11 @@ def test_login(setup_browser):
     password = os.getenv('PASSWORD')
 
     # ACT
-    with allure.step('Open the login page, assert the cookie'):
-        login_page.open()
-        home_page.accept_cookie()
-    with allure.step('Fill the login and password'):
-        login_page.fill_login(login)
-        login_page.fill_password(password)
-    with allure.step('Submit the form'):
-        login_page.submit()
+    login_page.open()
+    home_page.accept_cookie()
+    login_page.fill_login(login)
+    login_page.fill_password(password)
+    login_page.submit()
 
     # ASSERT
     with allure.step('Assert the login'):
