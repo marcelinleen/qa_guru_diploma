@@ -1,17 +1,16 @@
 import os
-import requests
 from dotenv import load_dotenv
 from helper.get_env_path import get_personal_env_path, test_data_path
 from helper.api_helpers.load_json_schema import load_json_schema
 from jsonschema import validate
+from helper.api_helpers.custom_session import project_url
 import allure
 
 
 @allure.label('Test Type', 'API')
 @allure.severity(allure.severity_level.CRITICAL)
-def test_successful_find_track(set_api_env):
+def test_successful_find_track():
     # ARRANGE
-    base_url = set_api_env
     schema = load_json_schema('get_tracks.json')
 
     load_dotenv(get_personal_env_path())
@@ -21,11 +20,9 @@ def test_successful_find_track(set_api_env):
 
     # ACT
     with allure.step('Make a request'):
-        response = requests.get(base_url, params={'method': 'track.search',
-                                                  'track': track,
-                                                  'api_key': api_key,
-                                                  'format': 'json'}
-                                )
+        response = project_url.get('', params={'method': 'track.search', 'track': track, 'api_key': api_key,
+                                               'format': 'json'}
+                                   )
 
     # ASSERT
     with allure.step('Assert the result'):
@@ -36,9 +33,8 @@ def test_successful_find_track(set_api_env):
 
 @allure.label('Test Type', 'API')
 @allure.severity(allure.severity_level.CRITICAL)
-def test_unsuccessful_find_track(set_api_env):
+def test_unsuccessful_find_track():
     # ARRANGE
-    base_url = set_api_env
     schema = load_json_schema('get_tracks.json')
 
     load_dotenv(get_personal_env_path())
@@ -48,11 +44,9 @@ def test_unsuccessful_find_track(set_api_env):
 
     # ACT
     with allure.step('Make a request'):
-        response = requests.get(base_url, params={'method': 'track.search',
-                                                  'track': track,
-                                                  'api_key': api_key,
-                                                  'format': 'json'}
-                                )
+        response = project_url.get('', params={'method': 'track.search', 'track': track, 'api_key': api_key,
+                                               'format': 'json'}
+                                   )
 
     # ASSERT
     with allure.step('Assert the result'):
@@ -63,9 +57,8 @@ def test_unsuccessful_find_track(set_api_env):
 
 @allure.label('Test Type', 'API')
 @allure.severity(allure.severity_level.CRITICAL)
-def test_successful_find_artist(set_api_env):
+def test_successful_find_artist():
     # ARRANGE
-    base_url = set_api_env
     schema = load_json_schema('get_artists.json')
 
     load_dotenv(get_personal_env_path())
@@ -75,11 +68,9 @@ def test_successful_find_artist(set_api_env):
 
     # ACT
     with allure.step('Make a request'):
-        response = requests.get(base_url, params={'method': 'artist.search',
-                                                  'artist': artist,
-                                                  'api_key': api_key,
-                                                  'format': 'json'}
-                                )
+        response = project_url.get('', params={'method': 'artist.search', 'artist': artist, 'api_key': api_key,
+                                               'format': 'json'}
+                                   )
 
     # ASSERT
     with allure.step('Assert the result'):
@@ -88,9 +79,8 @@ def test_successful_find_artist(set_api_env):
         validate(instance=response.json(), schema=schema)
 
 
-def test_unsuccessful_find_artist(set_api_env):
+def test_unsuccessful_find_artist():
     # ARRANGE
-    base_url = set_api_env
     schema = load_json_schema('get_artists.json')
 
     load_dotenv(get_personal_env_path())
@@ -100,11 +90,9 @@ def test_unsuccessful_find_artist(set_api_env):
 
     # ACT
     with allure.step('Make a request'):
-        response = requests.get(base_url, params={'method': 'artist.search',
-                                                  'artist': artist,
-                                                  'api_key': api_key,
-                                                  'format': 'json'}
-                                )
+        response = project_url.get('', params={'method': 'artist.search', 'artist': artist, 'api_key': api_key,
+                                               'format': 'json'}
+                                   )
 
     # ASSERT
     with allure.step('Assert the result'):

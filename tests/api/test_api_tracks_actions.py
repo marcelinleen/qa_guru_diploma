@@ -1,19 +1,18 @@
 import os
 from helper.get_env_path import get_personal_env_path, test_data_path
 from dotenv import load_dotenv
-import requests
 from helper.api_helpers.get_api_sig import get_sign
 from helper.api_helpers.get_api_sk import get_sk
 from helper.api_helpers.load_json_schema import load_json_schema
 from jsonschema import validate
+from helper.api_helpers.custom_session import project_url
 import allure
 
 
 @allure.label('Test Type', 'API')
 @allure.severity(allure.severity_level.CRITICAL)
-def test_like_track(set_api_env):
+def test_like_track():
     # ARRANGE
-    base_url = set_api_env
 
     load_dotenv(get_personal_env_path())
     api_key = os.getenv('API_KEY')
@@ -24,7 +23,7 @@ def test_like_track(set_api_env):
     track = os.getenv('TRACK')
     artist = os.getenv('ARTIST')
 
-    sk = get_sk(base_url, api_key, login, password, api_secret)
+    sk = get_sk('http://ws.audioscrobbler.com/2.0/', api_key, login, password, api_secret)
 
     data = {
         'method': 'track.love',
@@ -38,10 +37,10 @@ def test_like_track(set_api_env):
 
     # ARRANGE
     with allure.step('Make a request'):
-        response = requests.post(base_url, params={'method': 'track.love', 'track': track, 'artist': artist,
-                                                   'api_key': api_key, 'api_sig': api_sign, 'sk': sk
-                                                   }
-                                 )
+        response = project_url.post('', params={'method': 'track.love', 'track': track, 'artist': artist,
+                                                'api_key': api_key, 'api_sig': api_sign, 'sk': sk
+                                                }
+                                    )
 
     # ASSERT
     with allure.step('Assert the result'):
@@ -51,9 +50,8 @@ def test_like_track(set_api_env):
 
 @allure.label('Test Type', 'API')
 @allure.severity(allure.severity_level.CRITICAL)
-def test_get_favourite_tracks(set_api_env):
+def test_get_favourite_tracks():
     # ARRANGE
-    base_url = set_api_env
     schema = load_json_schema('get_users_favourite_tracks.json')
 
     load_dotenv(get_personal_env_path())
@@ -62,14 +60,13 @@ def test_get_favourite_tracks(set_api_env):
 
     # ACT
     with allure.step('Make a request'):
-        response = requests.get(base_url, params={'method': 'user.getLovedTracks', 'api_key': api_key, 'username': login,
-                                                  'format': 'json'
-                                                  }
-                                )
+        response = project_url.get('', params={'method': 'user.getLovedTracks', 'api_key': api_key, 'username': login,
+                                               'format': 'json'
+                                               }
+                                   )
 
     # ASSERT
     with allure.step('Assert the result'):
         assert response.status_code == 200
         assert response.json()['lovedtracks']
         validate(instance=response.json(), schema=schema)
-
