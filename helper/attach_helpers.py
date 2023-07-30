@@ -5,7 +5,7 @@ from allure_commons.types import AttachmentType
 
 def mobile_attach_video(m_video_url):
     html = "<html><body><video width='100%' height='100%' controls autoplay><source src='" + m_video_url \
-           + "'></video></body></html>'"
+           + "'></video></body></html>"
     allure.attach(html, 'video', AttachmentType.HTML, '.html')
 
 
@@ -27,8 +27,8 @@ def add_html(browser):
 def add_video(browser):
     video_url = 'https:selenoid.autotests.cloud/video/' + browser.driver.session_id + '.mp4'
     html = "<html><body><video width='100%' height='100%' controls autoplay><source src='" \
-           + video_url + "' type='video/mp4'></video></body></html>'"
-    allure.attach(html, 'video', AttachmentType.HTML, '.html')
+           + video_url + "' type='video/mp4'></video></body></html>"
+    allure.attach(body=html, name='video', attachment_type=AttachmentType.HTML, extension='.html')
 
 
 def attach_body():

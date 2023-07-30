@@ -1,7 +1,6 @@
 import allure
 
 
-@allure.story('Search Page')
 class SearchResultsPage:
 
     def __init__(self, browser):
